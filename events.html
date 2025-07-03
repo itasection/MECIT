@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events - Mailam Engineering College</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <!-- 🔷 Header -->
+  <header class="header">
+    <img src="Pictures/logo.jpg.jpg" alt="College Logo" class="logo">
+    <div class="college-name">
+      <center>
+      <h1>DEPARTMENT OF INFORMATION TECHNOLOGY</h1></center>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- 🔷 Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="eventsregister.html">Events Register </a>
+    <a href="contact.html">Contact Us </a>
+  </nav>
+
+  <!-- 🔷 Main Content -->
+  <main>
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li>
+          <strong>AI & Machine Learning Workshop</strong><br>
+          📅 Date: July 15, 2025<br>
+          📍 Location: Seminar Hall - IT Block<br>
+          📝 Description: Learn AI fundamentals with hands-on experience in Python and TensorFlow.
+        </li>
+        <br>
+        <li>
+          <strong>National Level Technical Symposium – INFOTECH 2K25</strong><br>
+          📅 Date: August 10, 2025<br>
+          📍 Location: College Auditorium<br>
+          📝 Description: A mega event with coding contests, paper presentations, and project demos.
+        </li>
+        <br>
+        <li>
+          <strong>Mini Project Expo</strong><br>
+          📅 Date: September 5, 2025<br>
+          📍 Location: Lab 2, IT Block<br>
+          📝 Description: Final year students showcase their innovative solutions to real-world problems.
+        </li>
+
+         <br>
+        <li>
+          <strong>Celesta'25</strong><br>
+          📅 Date: September 13, 2025<br>
+          📍 Location: IT Lab 1,2, Tech Block<br>
+          📝 Description: A National level Symposium .
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- 🔷 Footer -->
+  <footer>
+    <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🔷 Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

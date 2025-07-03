@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News - Mailam Engineering College</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <!-- 🔷 Header -->
+  <header class="header">
+    <img src="Pictures/logo.jpg.jpg" alt="College Logo" class="logo">
+    <div class="college-name">
+     <center>
+      <h1>DEPARTMENT OF INFORMATION TECHNOLOGY</h1></center>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- 🔷 Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="eventsregister.html">Events Register </a>
+    <a href="contact.html">Contact Us </a>
+  </nav>
+
+  <!-- 🔷 Main Content -->
+  <main>
+    <section class="news">
+      <h2>Latest News & Announcements</h2>
+      <ul>
+        <li>
+          <strong>📰 Infosys and TCS Campus Placement Drive</strong><br>
+          📅 June 5, 2025<br>
+          💬 32 IT students selected by top MNCs with attractive salary packages.
+        </li>
+        <br>
+        <li>
+          <strong>📢 New Cybersecurity Lab Inaugurated</strong><br>
+          📅 May 25, 2025<br>
+          💬 Equipped with modern tools and simulators to train students in ethical hacking and threat analysis.
+        </li>
+        <br>
+        <li>
+          <strong>🏆 Student Wins 1st Prize in National Hackathon</strong><br>
+          📅 April 18, 2025<br>
+          💬 Final year student K. Saravanan secured first place in "Hack4Tech" organized by IIT Madras.
+        </li>
+        <br>
+        <li>
+          <strong>📝 Research Paper Accepted at IEEE Conference</strong><br>
+          📅 March 10, 2025<br>
+          💬 Faculty and students collaborated on AI-based traffic monitoring system.
+        </li>
+
+        <br>
+        <li>
+          <strong>📝 National level Symosium "Celesta'25"</strong><br>
+          📅 August 10, 2025<br>
+          💬 A grand inaguration by the department.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- 🔷 Footer -->
+  <footer>
+    <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🔷 Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

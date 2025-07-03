@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MAILAM ENGINEERING College - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <header class="header">
+    <img src="Pictures/logo.jpg.jpg" alt="College Logo" class="logo">
+    <div class="college-name">
+      
+      <center><b>
+      <h1>DEPARTMENT OF INFORMATION TECHNOLOGY</h1></b></center>
+    </div>
+    <!-- Toggle button -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="eventsregister.html">Events Register </a>
+    <a href="contact.html">Contact Us </a>
+
+  </nav>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome to the Department of Information Technology</h2>
+      <p>Shaping the future with technology, innovation, and excellence in engineering education.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript to toggle navbar -->
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

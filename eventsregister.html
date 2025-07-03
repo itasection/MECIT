@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration - Mailam Engineering College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #002b5c;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .radio-group {
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+
+    .gpay-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .gpay-section img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #002b5c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    #confirmation {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+    }
+
+    #loadingScreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 9999;
+      text-align: center;
+      padding-top: 20%;
+      font-size: 20px;
+      font-weight: bold;
+      color: #002b5c;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loadingScreen">⏳ Submitting your registration... Please wait.</div>
+
+  <div class="container">
+    <h2>Event Registration Form</h2>
+    <form id="eventForm" enctype="multipart/form-data">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required>
+
+      <label for="college">College:</label>
+      <input type="text" id="college" name="college" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="eventDate">Event Date:</label>
+      <input type="date" id="eventDate" name="eventDate" required>
+
+      <label for="transactionId">Transaction ID:</label>
+      <input type="text" id="transactionId" name="transactionId" required>
+
+      <label for="teamMembers">Team Members Name:</label>
+      <input type="text" id="teamMembers" name="teamMembers" required>
+
+      <label>Event Type:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="eventType" value="Technical" required> Technical</label>
+        <label><input type="radio" name="eventType" value="Non-Technical" required> Non-Technical</label>
+      </div>
+
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+
+      <div class="gpay-section">
+        <h4>Pay via GPay</h4>
+        <img src="Pictures/balaji.jpg" alt="GPay QR Code"><br>
+        <p><strong>GPay Number: 9344655423</strong></p>
+      </div>
+
+      <label for="infoLink">Important Link (must view):</label>
+      <a href="https://forms.gle/JGJLU3U2c4wbebhR7" target="_blank" id="infoLink">Click here to view</a>
+
+      <div style="margin-top: 10px;">
+        <input type="checkbox" id="linkViewed" required>
+        <label for="linkViewed">I confirm that I have viewed the link</label>
+      </div>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+
+    <div id="confirmation"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("eventForm");
+    const confirmation = document.getElementById("confirmation");
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const checkbox = document.getElementById("linkViewed");
+      if (!checkbox.checked) {
+        alert("Please confirm that you viewed the important link before submitting.");
+        return;
+      }
+
+      const photoFile = document.getElementById("photo").files[0];
+      if (!photoFile) {
+        alert("Please upload a photo.");
+        return;
+      }
+
+      loadingScreen.style.display = "block"; // Show loading screen
+
+      const reader = new FileReader();
+      reader.onloadend = async function () {
+        const photoBase64 = reader.result.split(',')[1];
+
+        const data = new URLSearchParams();
+        data.append("name", document.getElementById("name").value);
+        data.append("department", document.getElementById("department").value);
+        data.append("college", document.getElementById("college").value);
+        data.append("mobile", document.getElementById("mobile").value);
+        data.append("email", document.getElementById("email").value);
+        data.append("eventDate", document.getElementById("eventDate").value);
+        data.append("transactionId", document.getElementById("transactionId").value);
+        data.append("teamMembers", document.getElementById("teamMembers").value);
+        data.append("eventType", document.querySelector('input[name="eventType"]:checked').value);
+        data.append("photoBase64", photoBase64);
+        data.append("photoName", photoFile.name);
+
+        try {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbzFKU8_l10XZC8GKri_5DFLe72ez36TORjLpfenuTYwCmvWeVQooLpjRo7pAfiIM8WkNQ/exec", {
+            method: "POST",
+            body: data
+          });
+
+          const result = await response.json();
+          loadingScreen.style.display = "none";
+
+          if (result.status === "success") {
+            confirmation.innerText = `✅ Thank you! You have registered successfully.`;
+            form.reset();
+          } else {
+            confirmation.innerText = "❌ Registration failed.";
+          }
+        } catch (error) {
+          loadingScreen.style.display = "none";
+          confirmation.innerText = "❌ Error connecting to server.";
+          console.error(error);
+        }
+      };
+
+      reader.readAsDataURL(photoFile);
+    });
+  </script>
+
+</body>
+</html>

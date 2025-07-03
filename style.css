@@ -1,0 +1,215 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f4f4;
+  
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #02244b;
+  color: rgb(247, 247, 247);
+  padding: 20px 0px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.center-logo {
+  width: 250px;               /* Adjust the size as needed */
+  height: auto;
+}
+.logo {
+  width: 600px;
+  height: 60px;
+  
+  
+}
+
+.college-name h1 {
+  margin: 55;
+  font-size: 30px;
+  color:rgb(201, 176, 12)
+  
+}
+
+.college-name h2 {
+  margin: 0;
+  font-size: 14px;
+  color: #a2af43;
+}
+
+/* Toggle Button */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #004080;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Main */
+main {
+  padding: 20px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #002b5c;
+}
+
+/* Footer */
+footer {
+  background-color: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: #004080;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 10px;
+    border-top: 1px solid #0066cc;
+  }
+}
+.contact-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  color: #007396;
+}
+
+.contact-card p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #002b5c;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.radio-group {
+  margin-top: 10px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #002b5c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004080;
+}
+
+#confirmation {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: green;
+}
