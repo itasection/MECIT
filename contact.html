@@ -2,30 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MAILAM ENGINEERING College - Home</title>
+  <title>Gallery - Mailam Engineering College</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
+  <!-- 🔷 Header -->
   <header class="header">
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-  <div class="logo-title">
-    <img src="mecclg.png" alt="College Logo" class="logo" />
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
-      <h1>DEPARTMENT OF INFORMATION TECHNOLOGY</h1>
-      <h2>Mailam Engineering College</h2>
+     <center>
+      <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2></center>
     </div>
-  </div>
-</header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
 
-<div id="loading-screen">
+  <div id="loading-screen">
   <div class="loader"></div>
 </div>
 
 
- <!-- Navigation Bar -->
+  <!-- 🔷 Navigation Bar -->
   <nav class="navbar" id="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -34,7 +51,6 @@
     <a href="gallery.html">Gallery</a>
     <a href="eventsregister.html">Events Register </a>
     <a href="contact.html">Contact Us </a>
-
   </nav>
 
 
