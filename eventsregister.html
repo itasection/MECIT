@@ -23,7 +23,7 @@
 
     h2 {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       color: #002b5c;
     }
 
@@ -110,9 +110,10 @@
   <div id="loadingScreen">⏳ Submitting your registration... Please wait.</div>
 
   <div class="container">
-    <center><h2>Celesta'25</h2>
+    <h2>Celesta'25</h2>
     <h2>Event Registration Form</h2>
-    <form id="eventForm" enctype="multipart/form-data"></center>
+
+    <form id="eventForm" enctype="multipart/form-data">
 
       <label for="name">Name:</label>
       <input type="text" id="name" required>
@@ -130,7 +131,7 @@
       <input type="email" id="email" required>
 
       <label>Event Date:</label>
-      <p style="margin-top: 10px; font-weight: lighter;">01 April 2025</p>
+      <p style="margin-top: 5px; font-weight: lighter;">01 April 2025</p>
 
       <label for="transactionId">Transaction ID:</label>
       <input type="text" id="transactionId" required>
@@ -149,7 +150,7 @@
 
       <div class="gpay-section">
         <h4>Pay via GPay</h4>
-        <img src="balaji.jpg" alt="GPay QR Code"><br>
+        <img src="Pictures/balaji.jpg" alt="GPay QR Code"><br>
         <p><strong>GPay Number: 9344655423</strong></p>
       </div>
 
@@ -164,8 +165,7 @@
     const confirmation = document.getElementById("confirmation");
     const loadingScreen = document.getElementById("loadingScreen");
     const submitButton = form.querySelector("button");
-
-    const EVENT_DATE = "2025-07-25";
+    const EVENT_DATE = "2025-07-25"; // Fixed backend value
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -194,7 +194,7 @@
         data.append("college", document.getElementById("college").value);
         data.append("mobile", document.getElementById("mobile").value);
         data.append("email", document.getElementById("email").value);
-        data.append("eventDate", EVENT_DATE); // fixed date
+        data.append("eventDate", EVENT_DATE);
         data.append("transactionId", document.getElementById("transactionId").value);
         data.append("teamMembers", document.getElementById("teamMembers").value);
         data.append("eventType", document.querySelector('input[name="eventType"]:checked').value);
@@ -202,7 +202,7 @@
         data.append("photoName", photoFile.name);
 
         try {
-          const response = await fetch("https://script.google.com/macros/s/AKfycbyqIojv0SiMt-H6RstJ8lyn1jOmCbWo-WTv4OwlTXMM2KsdcbJO7WUnDtwvkqYLVSSGsg/exec", {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbynASGDtakDCKkrMaOs72ILo_a4xijwpSn1ldg6B9SXRZjDno0624s22zhruyT9UD041Q/exec", {
             method: "POST",
             body: data
           });
