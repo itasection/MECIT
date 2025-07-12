@@ -2,75 +2,251 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MAILAM ENGINEERING COLLEGE- Home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>MAILAM ENGINEERING COLLEGE - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #02244b;
+      color: white;
+      padding: 90px 10px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 150%;
+      max-width: 800px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .college-name h2 {
+      font-size: clamp(15px, 4vw, 18px);
+      background: linear-gradient(135deg, #f2ea04, #ffffff, #5cc010);
+      background-size: 400% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: sparkle 10s linear infinite, glow 2.5s ease-in-out infinite;
+      margin: 0;
+    }
+
+    @keyframes sparkle {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 5px #aeb237, 0 0 10px #e2d419, 0 0 15px #9c0909;
+      }
+      50% {
+        text-shadow: 0 0 15px #eee717, 0 0 25px #ffee00, 0 0 30px #b91313;
+      }
+    }
+
+    .menu-toggle {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      background-color: #004080;
+      text-align: center;
+      padding: 5px 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 12px;
+        border-top: 1px solid #0066cc;
+      }
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #cbdc43;
+      border-top: 6px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite, flash 0.5s infinite alternate;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes flash {
+      from { box-shadow: 0 0 10px #f4f586, 0 0 20px #e6eb99; }
+      to { box-shadow: 0 0 20px #e2f082, 0 0 40px #c0e03d; }
+    }
+
+    /* 🌟 Electric Sparkle Heading */
+    .electric-text {
+      font-size: clamp(18px, 4vw, 28px);
+      background: linear-gradient(90deg, #141414);
+      background-size: 400% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shimmer 10s linear infinite, neon-glow 10.5s ease-in-out infinite;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes neon-glow {
+      0%, 100% {
+        text-shadow:
+          0 0 5px #0d0303,
+          0 0 10px rgb(0, 0, 0),
+          0 0 20px rgb(0, 0, 0),
+          0 0 40px #000000;
+      }
+      50% {
+        text-shadow:
+          0 0 10px #000000,
+          0 0 20px #000000,
+          0 0 30px #000000,
+          0 0 50px #000000;
+      }
+    }
+
+    .welcome {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .welcome p {
+      font-size: 16px;
+      color: #333;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- 🔷 Header -->
   <header class="header">
-    <img src="mecclg.png" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
-      
-      <center><b>
-      <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2></b></center>
+      <center><h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2></center>
     </div>
-    <!-- Toggle button -->
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
+  <!-- 🔷 Loader -->
   <div id="loading-screen">
-  <div class="loader"></div>
-</div>
+    <div class="loader"></div>
+  </div>
 
-
-  <!-- Navigation Bar -->
+  <!-- 🔷 Navigation -->
   <nav class="navbar" id="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="events.html">Events</a>
     <a href="news.html">News</a>
     <a href="gallery.html">Gallery</a>
-    <a href="eventsregister.html">Events Register </a>
-    <a href="contact.html">Contact Us </a>
-
+    <a href="eventsregister.html">Events Register</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
 
+  <!-- 🔷 Main Content -->
   <main>
     <section class="welcome">
-      <h2>Welcome to the Department of Information Technology</h2>
+      <h2 class="electric-text">Welcome to the Department of Information Technology</h2>
       <p>Shaping the future with technology, innovation, and excellence in engineering education.</p>
     </section>
   </main>
 
+  <!-- 🔷 Footer -->
   <footer>
     <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
   </footer>
 
-  
   <!-- ✅ Developer Credit -->
   <div style="text-align:center; font-size:14px; color:#444; margin:10px 0 30px;">
     <strong>DEVELOPED BY "A" BOTTERS</strong>
   </div>
 
-  <!-- JavaScript to toggle navbar -->
+  <!-- 🔷 Scripts -->
   <script>
     function toggleMenu() {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('active');
+      document.getElementById("navbar").classList.toggle("active");
     }
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      if (loader) {
+        loader.style.opacity = "0";
+        setTimeout(() => loader.style.display = "none", 500);
+      }
+    });
   </script>
-
-  <script>
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("loading-screen");
-    if (loader) {
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 500);
-    }
-  });
-</script>
-
 
 </body>
 </html>
