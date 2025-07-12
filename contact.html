@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About - Mailam Engineering College</title>
+  <title>Contact Us - Mailam Engineering College</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
-    /* General Body */
     body {
       font-family: Arial, sans-serif;
       background: #f5f4f4;
@@ -14,36 +12,34 @@
       padding: 0;
     }
 
-    /* Header */
     .header {
+      position: relative;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center content including logo */
+      align-items: center;
       justify-content: center;
       background-color: #02244b;
       color: white;
-      padding: 70px 10px;
+      padding: 90px 10px 90px 10px;
       text-align: center;
     }
 
     .logo {
-      width: 100%;
-      max-width: 1000px; /* Resize to fit on all screens */
+      width: 150%;
+      max-width: 800px;
       height: auto;
-      display: block;
-      margin: 0 auto; /* Centering */
+      margin-bottom: 15px;
     }
 
     .college-name h2 {
-      margin: 10px 0;
-      font-size: clamp(22px, 5vw, 32px);
+      font-size: clamp(15px, 4vw, 18px);
       background: linear-gradient(135deg, #f2ea04, #ffffff, #5cc010);
       background-size: 400% auto;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
-      animation: sparkle 1s linear infinite, glow 2.5s ease-in-out infinite;
-      position: relative;
+      animation: sparkle 2s linear infinite, glow 2.5s ease-in-out infinite;
+      margin: 0;
     }
 
     @keyframes sparkle {
@@ -60,82 +56,38 @@
       }
     }
 
-    .college-name h2::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      right: -18px;
-      font-size: 20px;
-      animation: twinkle 0.8s infinite ease-in-out;
-    }
-
-    @keyframes thunder {
-      0%, 100% {
-        background-position: 200% center;
-        text-shadow: 0 0 3px #fff, 0 0 10px rgb(158, 158, 109), 0 0 20px #12120b;
-      }
-      50% {
-        background-position: 0% center;
-        text-shadow: 0 0 5px #fff, 0 0 15px #e7e139, 0 0 25px #4d4d28;
-      }
-    }
-
-    .college-name h2 {
-      font-size: 14px;
-      color: #e4e126;
-    }
-
     .menu-toggle {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
       background: none;
       border: none;
       color: white;
-      font-size: 10px;
-      display: none;
+      font-size: 28px;
       cursor: pointer;
-      text-align:left;
     }
 
     .navbar {
       background-color: #004080;
-      text-align: left;
+      text-align: center;
       padding: 5px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .navbar a {
       color: white;
-      margin: 0 10px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-block;
-    }
-
-    main {
-      padding: 10px;
-    }
-
-    section {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 5px solid #002b5c;
-    }
-
-    footer {
-      background-color: #002b5c;
-      color: white;
-      text-align: center;
       padding: 10px;
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
       .navbar {
         display: none;
         flex-direction: column;
-        background-color: #004080;
       }
 
       .navbar.active {
@@ -143,123 +95,9 @@
       }
 
       .navbar a {
-        padding: 10px;
+        padding: 12px;
         border-top: 1px solid #0066cc;
       }
-    }
-
-    .contact-page {
-      padding: 40px;
-      text-align: center;
-    }
-
-    .contact-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .contact-card {
-      background-color: #f2f2f2;
-      padding: 20px;
-      border-radius: 12px;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-
-    .contact-card h3 {
-      margin-top: 0;
-      color: #007396;
-    }
-
-    .contact-card p {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-
-    .container {
-      max-width: 600px;
-      background: #fff;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #315c8d;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .radio-group {
-      margin-top: 10px;
-    }
-
-    .radio-group label {
-      font-weight: normal;
-      margin-right: 20px;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0056b3;
-      text-decoration: underline;
-    }
-
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 12px;
-      background-color: #002b5c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #004080;
-    }
-
-    #confirmation {
-      margin-top: 20px;
-      text-align: center;
-      font-weight: bold;
-      color: green;
-    }
-
-    #loadingScreen {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      z-index: 9999;
-      text-align: center;
-      padding-top: 20%;
-      font-size: 20px;
-      font-weight: bold;
-      color: #002b5c;
     }
 
     #loading-screen {
@@ -268,7 +106,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: hwb(0 55% 45%);
+      background-color: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -278,7 +116,7 @@
     .loader {
       width: 60px;
       height: 60px;
-      border: 6px solid hsl(63, 66%, 55%);
+      border: 6px solid #cbdc43;
       border-top: 6px solid transparent;
       border-radius: 50%;
       animation: spin 1s linear infinite, flash 0.5s infinite alternate;
@@ -289,8 +127,36 @@
     }
 
     @keyframes flash {
-      from { box-shadow: 0 0 10px rgb(198, 207, 122), 0 0 20px rgb(195, 204, 112); }
+      from { box-shadow: 0 0 10px #f4f586, 0 0 20px #e6eb99; }
       to { box-shadow: 0 0 20px #e2f082, 0 0 40px #c0e03d; }
+    }
+
+    main.contact-page {
+      padding: 20px;
+      background: white;
+      margin: 20px;
+      border-left: 5px solid #002b5c;
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-card {
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 10px;
     }
   </style>
 </head>
@@ -298,7 +164,7 @@
 
   <!-- 🔷 Header -->
   <header class="header">
-    <img src="mecclg.png" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
       <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
     </div>
@@ -321,56 +187,76 @@
     <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- 🔷 HOD Photo -->
-  <div style="text-align:center; margin-top: 30px;">
-    <img src="d.jpg" alt="HOD Photo"
-     style="width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 60%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-    <h3>Dr. B.KALAIVANAN,</h3>
-    <h3><strong>Head of the Department</strong></h3>
-  </div>
+  <!-- 🔷 Main Content -->
+  <main class="contact-page"><center>
+    <h2>Contact Us</h2>
+    <p>Here are the contact details of our department staff:</p></center>
 
-  <!-- 🔷 Extra Content -->
-  <section style="padding: 20px; text-align: center;">
-    <p>
-      Under the leadership of our esteemed Head of the Department, the Department of Information Technology is driven by academic excellence and innovative thinking. With years of experience and vision, our HOD plays a crucial role in shaping the future of IT professionals.
-    </p>
-  </section>
+    <div class="contact-list">
+      <div class="contact-card">
+        <h3>Dr. K. Kalaivany</h3>
+        <p>Head of Department</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ kalaivany.it@mailam.edu.in</p>
+      </div>
 
-  <!-- 🔷 About Section -->
-  <section class="about">
-    <h2>About the Department of Information Technology</h2>
-    <p>The Department of Information Technology at Mailam Engineering College was established with the aim of producing highly skilled professionals in the ever-evolving field of IT. Our department combines academic excellence with practical industry exposure, preparing students to become technology leaders of tomorrow.</p>
+      <div class="contact-card">
+        <h3>Mr. R. Gajendhiran</h3>
+        <p>Assistant HOD and Professor</p>
+        <p>📞 +91 91234 56789</p>
+        <p>✉️ gajendhiran.it@mailam.edu.in</p>
+      </div>
 
-    <p>We offer a dynamic curriculum covering core subjects such as programming, data structures, database management, networking, cybersecurity, and AI. Our faculty members are highly experienced and actively involved in research and consultancy projects.</p>
+      <div class="contact-card">
+        <h3>Mr. Loganathan</h3>
+        <p>Senior Assistant Professor</p>
+        <p>📞 +91 77080 89146</p>
+        <p>✉️ loganathan.it@mailam.edu.in</p>
+      </div>
 
-    <p>State-of-the-art laboratories, active student clubs, and frequent technical events help our students stay current with industry trends and gain hands-on experience.</p>
-    
-    <h3>Our Vision</h3>
-    <p>To be a center of excellence in Information Technology education, innovation, and research that contributes to technological advancement and societal well-being.</p>
+      <div class="contact-card">
+        <h3>Mrs. Ramya</h3>
+        <p>Assistant Professor</p>
+        <p>📞 +91 91234 56789</p>
+        <p>✉️ ramya.it@mailam.edu.in</p>
+      </div>
 
-    <h3>Our Mission</h3>
-    <ul>
-      <li>To provide quality technical education in IT with a strong foundation of theory and practice.</li>
-      <li>To foster innovation, creativity, and entrepreneurship among students.</li>
-      <li>To develop responsible IT professionals committed to lifelong learning and ethical practices.</li>
-    </ul>
-  </section>
+      <div class="contact-card">
+        <h3>Mrs. Sathya</h3>
+        <p>Assistant Professor</p>
+        <p>📞 +91 91234 56789</p>
+        <p>✉️ sathya.it@mailam.edu.in</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Mr. Balaji K</h3>
+        <p>Events Organizer</p>
+        <p>📞 +91 77080 89146</p>
+        <p>✉️ balajinivas22062005@gmail.com</p>
+      </div>
+    </div>
+
+    <section style="margin-top: 40px;">
+      <h3>📍 College Address</h3>
+      <p>
+        Mailam Engineering College,<br>
+        Mailam - 604304,<br>
+        Villupuram District,<br>
+        Tamil Nadu, India.
+      </p>
+    </section>
+  </main>
 
   <!-- 🔷 Footer -->
   <footer>
-    <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
+    <p>&copy; 2025 Mailam Engineering College. All Rights Reserved.</p>
   </footer>
 
-  <!-- 🔷 Developer Credit -->
-  <div style="text-align:center; font-size:14px; color:#272121; margin:10px 0 30px;">
+  <div style="text-align:center; font-size:14px; color:#444; margin:10px 0 30px;">
     <strong>DEVELOPED BY "A" BOTTERS</strong>
   </div>
 
-  <!-- 🔷 Script -->
+  <!-- 🔷 Scripts -->
   <script>
     function toggleMenu() {
       document.getElementById("navbar").classList.toggle("active");
@@ -384,6 +270,5 @@
       }
     });
   </script>
-
 </body>
 </html>
