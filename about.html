@@ -10,12 +10,18 @@
 
   <!-- 🔷 Header -->
   <header class="header">
-    <img src="logo.jpg.jpg" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
       <center><h1>DEPARTMENT OF INFORMATION TECHNOLOGY</h1></center>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
+
+
+  <div id="loading-screen">
+  <div class="loader"></div>
+</div>
+
 
   <!-- 🔷 Navigation Bar -->
   <nav class="navbar" id="navbar">
@@ -29,8 +35,7 @@
   </nav>
 
   <!-- 🔷 Main Content -->
-  <main>
-    <!-- ✅ HOD Photo at Top -->
+   <!-- ✅ HOD Photo at Top -->
     <div style="text-align:center; margin-top: 30px;">
     <img src="d.jpg" alt="HOD Photo"
      style="width: 180px;
@@ -77,7 +82,7 @@
   </footer>
 
   <!-- ✅ Developer Credit -->
-  <div style="text-align:center; font-size:14px; color:#444; margin:10px 0 30px;">
+  <div style="text-align:center; font-size:14px; color:#272121; margin:10px 0 30px;">
     <strong>DEVELOPED BY "A" BOTTERS</strong>
   </div>
 
@@ -87,6 +92,17 @@
       document.getElementById("navbar").classList.toggle("active");
     }
   </script>
+
+  <script>
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loading-screen");
+    if (loader) {
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 500);
+    }
+  });
+</script>
+
 
 </body>
 </html>
