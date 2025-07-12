@@ -1,45 +1,83 @@
+/* General Body */
 body {
   font-family: Arial, sans-serif;
+  background: #f5f4f4;
   margin: 0;
   padding: 0;
-  background: #f5f4f4;
-  
 }
 
 /* Header */
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #02244b;
-  color: rgb(247, 247, 247);
-  padding: 20px 0px;
-  flex-wrap: wrap;
+  color: white;
+  padding: 20px 10px;
   text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-.center-logo {
-  width: 250px;               /* Adjust the size as needed */
-  height: auto;
-}
-.logo {
-  width: 600px;
-  height: 60px;
-  
-  
 }
 
+.logo {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Sparkle + Glow Title */
 .college-name h1 {
-  margin: 55;
-  font-size: 30px;
-  color:rgb(221, 210, 13)
-  
+  margin: 10px 0;
+  font-size: clamp(22px, 5vw, 32px);
+  background: linear-gradient(135deg, #f2ea04, #ffffff, #5cc010);
+  background-size: 400% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: sparkle 3s linear infinite, glow 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #aeb237, 0 0 10px #e2d419, 0 0 15px #9c0909;
+  }
+  50% {
+    text-shadow: 0 0 15px #eee717, 0 0 25px #ffee00, 0 0 30px #b91313;
+  }
+}
+
+.college-name h1::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -18px;
+  font-size: 20px;
+  animation: twinkle 0.8s infinite ease-in-out;
+}
+
+/* Sparkle & Glow Animation */
+@keyframes thunder {
+  0%, 100% {
+    background-position: 200% center;
+    text-shadow: 0 0 3px #fff, 0 0 10px rgb(158, 158, 109), 0 0 20px #12120b;
+  }
+  50% {
+    background-position: 0% center;
+    text-shadow: 0 0 5px #fff, 0 0 15px #e7e139, 0 0 25px #4d4d28;
+  }
 }
 
 .college-name h2 {
   margin: 0;
   font-size: 14px;
-  color: #a2af43;
+  color: #e4e126;
 }
 
 /* Toggle Button */
@@ -67,7 +105,7 @@ body {
   display: inline-block;
 }
 
-/* Main */
+/* Main Content */
 main {
   padding: 20px;
 }
@@ -87,7 +125,7 @@ footer {
   padding: 10px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -108,6 +146,8 @@ footer {
     border-top: 1px solid #0066cc;
   }
 }
+
+/* Contact Page */
 .contact-page {
   padding: 40px;
   text-align: center;
@@ -139,13 +179,8 @@ footer {
   margin: 6px 0;
   font-size: 15px;
 }
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  margin: 0;
-  padding: 0;
-}
 
+/* Form Styling */
 .container {
   max-width: 600px;
   background: #fff;
@@ -213,3 +248,55 @@ button:hover {
   font-weight: bold;
   color: green;
 }
+
+/* Loading screen for form */
+#loadingScreen {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 9999;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #002b5c;
+}
+
+
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ff0000;
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, flash 0.5s infinite alternate;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flash {
+  from { box-shadow: 0 0 10px red, 0 0 20px red; }
+  to { box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d; }
+}
+
+
+
