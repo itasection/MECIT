@@ -274,7 +274,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000; /* dark background */
+  background-color: hwb(0 55% 45%); /* dark background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +284,7 @@ button:hover {
 .loader {
   width: 60px;
   height: 60px;
-  border: 6px solid #ff0000;
+  border: 6px solid hsl(63, 66%, 55%);
   border-top: 6px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite, flash 0.5s infinite alternate;
@@ -295,8 +295,8 @@ button:hover {
 }
 
 @keyframes flash {
-  from { box-shadow: 0 0 10px red, 0 0 20px red; }
-  to { box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d; }
+  from { box-shadow: rgb(198, 207, 122), 0 0 20px rgb(195, 204, 112); }
+  to { box-shadow: #e2f082, 0 0 40px #cef044; }
 }
 
 
