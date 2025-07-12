@@ -44,13 +44,19 @@ body {
 
 /* Toggle Button */
 .menu-toggle {
-  background: none;
+  position: fixed;         /* Keeps it in place even when scrolling */
+  top: 10px;               /* Distance from top */
+  left: 10px;              /* Distance from left */
+  font-size: 24px;         /* Make icon large */
+  padding: 10px 15px;
+  background-color: #fff;  /* Optional: background for visibility */
   border: none;
-  color: white;
-  font-size: 24px;
-  display: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  z-index: 1000;           /* Stay on top of other elements */
 }
+
 
 /* Navbar */
 .navbar {
