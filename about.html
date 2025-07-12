@@ -3,27 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <title>About - Mailam Engineering College</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #02244b;
+      color: white;
+      padding: 90px 10px 90px 10px; /* more space for logo/title */
+      text-align: center;
+    }
+
+    .logo {
+      width: 120%;
+      max-width: 800px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .college-name h2 {
+      font-size: clamp(15px, 4vw, 18px);
+      background: linear-gradient(135deg, #f2ea04, #ffffff, #5cc010);
+      background-size: 400% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: sparkle 1s linear infinite, glow 2.5s ease-in-out infinite;
+      margin: 0;
+    }
+
+    @keyframes sparkle {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 5px #aeb237, 0 0 10px #e2d419, 0 0 15px #9c0909;
+      }
+      50% {
+        text-shadow: 0 0 15px #eee717, 0 0 25px #ffee00, 0 0 30px #b91313;
+      }
+    }
+
+    .menu-toggle {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      background-color: #004080;
+      text-align: center;
+      padding: 5px 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 12px;
+        border-top: 1px solid #0066cc;
+      }
+    }
+
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-left: 5px solid #002b5c;
+    }
+
+    footer {
+      background-color: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #cbdc43;
+      border-top: 6px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite, flash 0.5s infinite alternate;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes flash {
+      from { box-shadow: 0 0 10px #f4f586, 0 0 20px #e6eb99; }
+      to { box-shadow: 0 0 20px #e2f082, 0 0 40px #c0e03d; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- 🔷 Header -->
   <header class="header">
-    <img src="mecclg.png" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
-      <center><h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2></center>
+      <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
-
+  <!-- 🔷 Loading -->
   <div id="loading-screen">
-  <div class="loader"></div>
-</div>
+    <div class="loader"></div>
+  </div>
 
-
-  <!-- 🔷 Navigation Bar -->
+  <!-- 🔷 Navigation -->
   <nav class="navbar" id="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -34,75 +175,66 @@
     <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- 🔷 Main Content -->
-   <!-- ✅ HOD Photo at Top -->
-    <div style="text-align:center; margin-top: 30px;">
+  <!-- 🔷 HOD -->
+  <div style="text-align:center; margin-top: 30px;">
     <img src="d.jpg" alt="HOD Photo"
-     style="width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 60%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-     <center> <h3>Dr. B.KALAIVANAN,</h3>
-      <h3><strong>Head of the Department</strong> </h3>
-   </center>
-    </div>
+         style="width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 60%;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+    <h3>Dr. B.KALAIVANAN,</h3>
+    <h3><strong>Head of the Department</strong></h3>
+  </div>
 
-    <!-- ✅ Extra Content Section -->
-    <section style="padding: 20px; text-align: center;">
-      <p>
-        Under the leadership of our esteemed Head of the Department, the Department of Information Technology is driven by academic excellence and innovative thinking. With years of experience and vision, our HOD plays a crucial role in shaping the future of IT professionals.
-      </p>
-    </section>
+  <!-- 🔷 Description -->
+  <section style="text-align:center;">
+    <p>
+      Under the leadership of our esteemed Head of the Department, the Department of Information Technology is driven by academic excellence and innovative thinking. With years of experience and vision, our HOD plays a crucial role in shaping the future of IT professionals.
+    </p>
+  </section>
 
-    <!-- ✅ Original About Section -->
-    <section class="about">
-      <h2>About the Department of Information Technology</h2>
-      <p>The Department of Information Technology at Mailam Engineering College was established with the aim of producing highly skilled professionals in the ever-evolving field of IT. Our department combines academic excellence with practical industry exposure, preparing students to become technology leaders of tomorrow.</p>
+  <!-- 🔷 About Section -->
+  <section>
+    <h2>About the Department of Information Technology</h2>
+    <p>The Department of Information Technology at Mailam Engineering College was established with the aim of producing highly skilled professionals in the ever-evolving field of IT. Our department combines academic excellence with practical industry exposure, preparing students to become technology leaders of tomorrow.</p>
+    <p>We offer a dynamic curriculum covering core subjects such as programming, data structures, database management, networking, cybersecurity, and AI. Our faculty members are highly experienced and actively involved in research and consultancy projects.</p>
+    <p>State-of-the-art laboratories, active student clubs, and frequent technical events help our students stay current with industry trends and gain hands-on experience.</p>
+    
+    <h3>Our Vision</h3>
+    <p>To be a center of excellence in Information Technology education, innovation, and research that contributes to technological advancement and societal well-being.</p>
 
-      <p>We offer a dynamic curriculum covering core subjects such as programming, data structures, database management, networking, cybersecurity, and AI. Our faculty members are highly experienced and actively involved in research and consultancy projects.</p>
-
-      <p>State-of-the-art laboratories, active student clubs, and frequent technical events help our students stay current with industry trends and gain hands-on experience.</p>
-      
-      <h3>Our Vision</h3>
-      <p>To be a center of excellence in Information Technology education, innovation, and research that contributes to technological advancement and societal well-being.</p>
-
-      <h3>Our Mission</h3>
-      <ul>
-        <li>To provide quality technical education in IT with a strong foundation of theory and practice.</li>
-        <li>To foster innovation, creativity, and entrepreneurship among students.</li>
-        <li>To develop responsible IT professionals committed to lifelong learning and ethical practices.</li>
-      </ul>
-    </section>
-  </main>
+    <h3>Our Mission</h3>
+    <ul>
+      <li>To provide quality technical education in IT with a strong foundation of theory and practice.</li>
+      <li>To foster innovation, creativity, and entrepreneurship among students.</li>
+      <li>To develop responsible IT professionals committed to lifelong learning and ethical practices.</li>
+    </ul>
+  </section>
 
   <!-- 🔷 Footer -->
   <footer>
     <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
   </footer>
 
-  <!-- ✅ Developer Credit -->
   <div style="text-align:center; font-size:14px; color:#272121; margin:10px 0 30px;">
     <strong>DEVELOPED BY "A" BOTTERS</strong>
   </div>
 
-  <!-- 🔷 Toggle Script -->
+  <!-- 🔷 Script -->
   <script>
     function toggleMenu() {
       document.getElementById("navbar").classList.toggle("active");
     }
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      if (loader) {
+        loader.style.opacity = "0";
+        setTimeout(() => loader.style.display = "none", 500);
+      }
+    });
   </script>
-
-  <script>
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("loading-screen");
-    if (loader) {
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 500);
-    }
-  });
-</script>
-
 
 </body>
 </html>
