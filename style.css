@@ -23,7 +23,7 @@ body {
   max-width: 500px;
   height: auto;
   display: block;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* Sparkle + Glow Title */
@@ -295,8 +295,8 @@ button:hover {
 }
 
 @keyframes flash {
-  from { box-shadow: rgb(198, 207, 122), 0 0 20px rgb(195, 204, 112); }
-  to { box-shadow: #e2f082, 0 0 40px #cef044; }
+  from { box-shadow: 0 0 10px rgb(198, 207, 122), 0 0 20px rgb(195, 204, 112); }
+  to { box-shadow: 0 0 20px #e2f082, 0 0 40px #c0e03d; }
 }
 
 
