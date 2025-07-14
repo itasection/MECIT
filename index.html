@@ -133,6 +133,36 @@
       to { box-shadow: 0 0 20px #e2f082, 0 0 40px #c0e03d; }
     }
 
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #02244b;
+      padding: 12px 0;
+    }
+
+    .glitter-marquee {
+      display: inline-block;
+      padding-left: 100%;
+      font-size: 17px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #fff700, #ffffff, #ede105, #0f96bb,#fcfcfc);
+      background-size: 400% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: scroll-left 20s linear infinite, shimmer 4s infinite linear;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 400% center; }
+    }
+
     .welcome {
       padding: 40px 20px;
       text-align: center;
@@ -163,14 +193,21 @@
 
   <!-- 🔷 Header -->
   <header class="header">
-    <img src="mecclg.png" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
       <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
-  <!-- 🔷 Loading -->
+  <!-- 🔷 Glittering Marquee -->
+  <div class="marquee-container">
+    <div class="glitter-marquee">
+      WELCOME TO THE DEPARTMENT OF<strong> INFORMATION TECHNOLOGY</strong>, MAILAM ENGINEERING COLLEGE.     A NATIONAL LEVEL SYMPOSIUM <strong>CELESTA'25</strong> HELD ON 30/04/2025. REGISTER NOW...
+    </div>
+  </div>
+
+  <!-- 🔷 Loading Screen -->
   <div id="loading-screen">
     <div class="loader"></div>
   </div>
@@ -189,8 +226,7 @@
   <!-- 🔷 Main Content -->
   <main>
     <section class="welcome">
-      <h2>Welcome </h2>
-      </h2>
+      <h2>Welcome</h2>
       <p>
         It gives us immense pleasure to welcome you to the Department of Information Technology at Mailam Engineering College. Our department stands as a beacon of knowledge, skill development, and innovation. We are committed to providing a holistic learning environment that fosters critical thinking and technical excellence in our students.
       </p>
