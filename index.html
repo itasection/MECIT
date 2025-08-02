@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>MAILAM ENGINEERING COLLEGE - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,12 +48,8 @@
     }
 
     @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 0 5px #aeb237, 0 0 10px #e2d419, 0 0 15px #9c0909;
-      }
-      50% {
-        text-shadow: 0 0 15px #eee717, 0 0 25px #ffee00, 0 0 30px #b91313;
-      }
+      0%, 100% { text-shadow: 0 0 5px #aeb237, 0 0 10px #e2d419, 0 0 15px #9c0909; }
+      50% { text-shadow: 0 0 15px #eee717, 0 0 25px #ffee00, 0 0 30px #b91313; }
     }
 
     .menu-toggle {
@@ -73,9 +68,8 @@
       text-align: center;
       padding: 5px 0;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .navbar a {
@@ -150,7 +144,7 @@
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
-      animation: scroll-left 30s linear infinite, shimmer 4s infinite linear;
+      animation: scroll-left 25s linear infinite, shimmer 4s infinite linear;
     }
 
     @keyframes scroll-left {
@@ -163,8 +157,53 @@
       100% { background-position: 400% center; }
     }
 
+    .content-section {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-left: 5px solid #002b5c;
+    }
+
+    .slideshow {
+      max-width: 800px;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4 }
+      to { opacity: 1 }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      max-height: 250px;
+      border-radius: 8px;
+    }
+
+    .caption {
+      font-size: 16px;
+      margin-top: 12px;
+      color: #333;
+      font-weight: 500;
+    }
+
     .welcome {
-      padding: 40px 20px;
       text-align: center;
     }
 
@@ -187,29 +226,36 @@
       text-align: center;
       padding: 10px;
     }
+
+    @media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <!-- 🔷 Header -->
   <header class="header">
-    <img src="mecclg.png" alt="College Logo" class="logo">
+    <img src="Pictures/mecclg.png" alt="College Logo" class="logo">
     <div class="college-name">
       <h2>DEPARTMENT OF INFORMATION TECHNOLOGY</h2>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
   </header>
 
-  <!-- 🔷 Glittering Marquee -->
-  <div class="marquee-container">
-    <div class="glitter-marquee">
-      WELCOME TO THE DEPARTMENT OF<strong> INFORMATION TECHNOLOGY</strong>, MAILAM ENGINEERING COLLEGE.     A NATIONAL LEVEL SYMPOSIUM <strong>CELESTA'25</strong> HELD ON 30/04/2025. REGISTER NOW...
-    </div>
-  </div>
-
-  <!-- 🔷 Loading Screen -->
+  <!-- 🔷 Loading -->
   <div id="loading-screen">
     <div class="loader"></div>
+  </div>
+
+  <!-- 🔷 Marquee -->
+  <div class="marquee-container">
+    <div class="glitter-marquee">
+      WELCOME TO THE DEPARTMENT OF INFORMATION TECHNOLOGY, MAILAM ENGINEERING COLLEGE. A NATIONAL LEVEL SYMPOSIUM <strong>CELESTA'25</strong> HELD ON 30/04/2025. REGISTER NOW...
+    </div>
   </div>
 
   <!-- 🔷 Navigation -->
@@ -220,29 +266,52 @@
     <a href="news.html">News</a>
     <a href="gallery.html">Gallery</a>
     <a href="eventsregister.html">Events Register</a>
+    <a href="faculty.html">Faculty</a>
+    <a href="login.html">Student Login</a>
+    <a href="notes.html">Notes</a>
     <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- 🔷 Main Content -->
-  <main>
-    <section class="welcome">
-      <h2>Welcome</h2>
-      <p>
-        It gives us immense pleasure to welcome you to the Department of Information Technology at Mailam Engineering College. Our department stands as a beacon of knowledge, skill development, and innovation. We are committed to providing a holistic learning environment that fosters critical thinking and technical excellence in our students.
-      </p>
-      <p>
-        With dedicated faculty, advanced laboratories, and a dynamic curriculum, we ensure that our students are industry-ready and future-focused. We believe in nurturing both technical acumen and ethical responsibility to contribute meaningfully to society. We look forward to shaping a generation of IT professionals who will lead with vision, integrity, and innovation.
-      </p>
-    </section>
-  </main>
+  <!-- 🔷 Slideshow -->
+  <div class="content-section">
+    <div class="slideshow" id="slideshow">
+      <div class="slide">
+        <div class="card">
+          <img src="Pictures/download (2).jpeg" alt="Symposium Banner">
+          <div class="caption">🎓 CELESTA'25 – National Level Technical Symposium</div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <img src="Pictures/download (3).jpeg" alt="Campus View">
+          <div class="caption">🏫 Explore the beautiful campus of Mailam Engineering College</div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="card">
+          <img src="Pictures/download (4).jpeg" alt="Department Lab">
+          <div class="caption">💻 Advanced IT Labs and Smart Classrooms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔷 Welcome Message -->
+  <div class="content-section welcome">
+    <h2>Welcome</h2>
+    <p>
+      It gives us immense pleasure to welcome you to the Department of Information Technology at Mailam Engineering College. Our department stands as a beacon of knowledge, skill development, and innovation.
+    </p>
+    <p>
+      With dedicated faculty, advanced laboratories, and a dynamic curriculum, we ensure that our students are industry-ready and future-focused.
+    </p>
+  </div>
 
   <!-- 🔷 Footer -->
   <footer>
     <p>© 2025 Mailam Engineering College. All Rights Reserved.</p>
   </footer>
-
-  <!-- ✅ Developer Credit -->
-  <div style="text-align:center; font-size:14px; color:#444; margin:10px 0 30px;">
+  <div style="text-align:center; font-size:14px; color:#272121; margin:10px 0 30px;">
     <strong>DEVELOPED BY "A" BOTTERS</strong>
   </div>
 
@@ -259,7 +328,18 @@
         setTimeout(() => loader.style.display = "none", 500);
       }
     });
-  </script>
 
+    let slideIndex = -1;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].style.display = "block";
+      setTimeout(showSlides, 3500);
+    }
+
+    showSlides();
+  </script>
 </body>
 </html>
